@@ -1,4 +1,4 @@
-resource "aws_security_group" "Jenkins-sg" {
+resource "aws_security_group" "SG_For_All" {
   name        = "Jenkins-Security Group"
   description = "Open 22,443,80,8080"
 
@@ -25,16 +25,16 @@ resource "aws_security_group" "Jenkins-sg" {
   }
 
   tags = {
-    Name = "Jenkins-sg"
+    Name = "SG_For_All"
   }
 }
 
 
 resource "aws_instance" "web" {
-  ami                    = "ami-0f5ee92e2d63afc18"
+  ami                    = "ami-06aa3f7caf3a30282"
   instance_type          = "t2.medium"
-  key_name               = "Mumbai"
-  vpc_security_group_ids = [aws_security_group.Jenkins-sg.id]
+  key_name               = "Ansible"
+  vpc_security_group_ids = [aws_security_group.SG_For_All.id]
   user_data              = templatefile("./install_jenkins.sh", {})
 
   tags = {
