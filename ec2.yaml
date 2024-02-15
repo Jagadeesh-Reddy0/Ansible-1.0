@@ -22,16 +22,16 @@
 
   vars:
     ansible_python_interpreter: /usr/bin/python3.10
-    keypair: Mumbai
+    keypair: Ansible
     instance_type: t2.micro
-    image_id: ami-0f5ee92e2d63afc18
+    image_id: ami-06aa3f7caf3a30282
     wait: yes
     group: webserver
     count: 1
-    region: ap-south-1
+    region: us-east-1
     security_group: ec2-security-group
     tag_name:
-      Name: Aj-ec2   
+      Name: teat-ec2   
 
   tasks:
     - name: Create a security group
