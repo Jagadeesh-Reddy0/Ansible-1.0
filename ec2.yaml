@@ -29,7 +29,7 @@
     group: webserver
     count: 1
     region: us-east-1
-    security_group: ec2-security-group
+    security_group: Jenkins-Security Group
     tag_name:
       Name: teat-ec2   
 
